@@ -1,3 +1,4 @@
+Question 1
 $ ssh examtp@51.255.199.225
 > ls
 . . . . . . /* quelques fichiers */ ......
@@ -7,6 +8,14 @@ $ ssh examtp@51.255.199.225
 > pwd
 /home/examtp
 // Nous remarquons ici que nous sommes bien placés, grâce à la commande cd seule (ou cd ~) qui nous emmène directement dans notre répertoire de session (contenu dans la variable d'environnement $HOME et également précisé dans le fichier /etc/passwd)
+
+Question 2: 
+
+> script joly_martin.txt
+
+
+Question 3:
+
 > man ls
 > ls -lat
 	total 120
@@ -34,12 +43,12 @@ $ ssh examtp@51.255.199.225
 	-rw-r--r-- 1 examtp examtp  3771 Dec  4 20:33 .bashrc
 	-rw-r--r-- 1 examtp examtp   655 Dec  4 20:33 .profile
 	drwxr-xr-x 4 root   root    4096 Dec  4 20:33 ..
+
 > cat /etc/passwd
-/* contenu du fichier
+	/* contenu du fichier
 > tail -n 5 /etc/passwd
-dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
-sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin
-pollinate:x:111:1::/var/cache/pollinate:/bin/false
-ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
-examtp:x:1001:1001:examtp,0,000,000,0:/home/examtp:/bin/bash
-> 
+	dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+	sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin
+	pollinate:x:111:1::/var/cache/pollinate:/bin/false
+	ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+	examtp:x:1001:1001:examtp,0,000,000,0:/home/examtp:/bin/bash
