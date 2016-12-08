@@ -61,7 +61,11 @@ J'ai cherché sur internet cette commande, qui était déjà faite pour les 4 de
 Question 5
 
 Pour créer mon compte, je fais
-> useradd jolymartin -g gjolymartin
+> useradd jolymartin -g gjolymartin -d /home/examtp/jolymartin
+
+Néanmoins, étant donné que examtp ne fait pas parti des sudoers, je n'ai donc pas les droits nécéssaires pour créer ni un compte, ni un groupe.
+
+
 Ensuite pour paramétrer mon mot de passe j'utilise la commande 'passwd $USER' (j'aurais pu préciser également mon mot de passe grâce à l'option '-p' de 'useradd' mais il aurait du être crypté)
 > passwd jolymartin
 
@@ -99,3 +103,11 @@ $ find . -size 0 -exec rm {} \;
 
 La commande ci dessus va chercher les fichiers qui remplissent les conditions : ici la taille doit être 0 comme le précise le paramètre -size. Et il va ensuite éxécuter la commande rm sur ces fichiers comme le précise le paramètre -exec
 
+Question 9:
+ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kill {}
+
+'ps' affiche les processus en cours, l'option '-ejH' permet selon le man d'afficher les process sous la forme d'un ptree, l'option 'U' permet de sélectionner les processus créés par un certain utilisateur
+Ensuite avec 'xargs' on va mettre les processus qu'on aura récupéré de la commande précédante grâce au pipe '|', en arrière plan, puis on va recommencer et rechercher les process de jolymartin pour enfin les envoyer à xargs -I {} kill {} qui va les killer. (équivalent de 'kill $PID')
+
+La commande à rentrer est
+alias del="ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kill {}"
