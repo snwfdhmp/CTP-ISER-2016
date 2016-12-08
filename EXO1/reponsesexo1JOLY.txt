@@ -83,3 +83,26 @@ C <--> !
 F <--> -
 r <--> 9
 h <--> =
+
+Question 4 :
+'paste -d'\0' <(cut -c2 mot1) <(cut -c1 mot1) <(cut -c3-99 mot1) > mot1Rep'
+
+Cette commande envoie d'abord le 2eme caractère de chaque ligne à la commande paste, puis le premier (on les a donc inversés)
+Ensuite il envoie les lettres dans le bon ordre, et on resort tout dans mot1Rep
+
+'tac mot2 > mot2Rep'
+
+On inverse mot2 grâce à la commande tac (inverse de cat) et on redirige tout dans mot2Rep
+
+'paste -d' ' mot1Rep mot2Rep reste > q43'
+
+Joint tous les fichiers et redirige le tout dans q43
+
+Question 5:
+
+'cat q43 | tr "%/$+*<>50&!-9=" "LaeiouymnlCFrh" > lestitres'
+
+On se sert du codage obtenu avec tr pour transposer tous les caractères. et tout stocker dans 'lestitres'
+
+Question Bonus :
+L'auteur recherché est Jean De La Fontaine

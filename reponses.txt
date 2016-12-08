@@ -1,1 +1,6 @@
 FICHIER REPONSES CTP :
+
+mkdir CTPJOLY_dec2016
+mkdir EXO1
+mkdir EXO2
+mkdir EXO3
