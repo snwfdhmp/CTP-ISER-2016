@@ -1,3 +1,4 @@
+Question 1 :
 Mon adresse IP est un identifiant unique sur le réseau qui permet de m'identifier de manière numérique.
 On a très souvent 2 adresses IP : l'adresse IP Publique (80.215.242.152) et l'adresse IP locale (192.168.43.66)
 
@@ -30,3 +31,31 @@ Réponses :
 Mon ip publique : 80.215.242.152
 Mon ip locale : 192.168.43.66
 L'ip de ubuntu-fr.org : 86.65.39.13
+
+
+Question 2:
+$ ftp chaire-ecommerce.ec-lille.fr
+> USER : *** (connexion anonyme)
+> PASS : ***
+ftp> ls -la
+ftp> cd .ctp
+ftp> bin
+ftp> mget *
+ftp> quit
+$ cat indice.txt
+-> J'ai ouvert la photo avec un visualisateur d'images
+
+Le fichier indice.txt contient un lien : http://www.chateau-thierry.fr/
+La photo est une photo d'un roi.
+
+$ ssh mjoly@ig2ip5.priv.ig2i.fr
+PASS: ****
+$ ls -la
+$ cd ..
+$ ls -la
+$ cd pkubiak
+$ ls
+$ cd ISER<tab>
+$ ls -la
+$ cat indice3
+www.poesie.webnet.fr
