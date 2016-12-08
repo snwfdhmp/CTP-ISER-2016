@@ -58,10 +58,21 @@ Question 3:
 //Ici on va utiliser la commande awk qui permet de faire des traitements sur les sorties et sur les fichiers.
 J'ai cherché sur internet cette commande, qui était déjà faite pour les 4 dernières lignes d'un fichier, du coup je l'ai adapté à mes besoins.
 
-Pour changer mon mot de passe, j'entre la commande 'passwd'
+Question 5
+
+Pour créer mon compte, je fais
+> useradd jolymartin -g gjolymartin
+Ensuite pour paramétrer mon mot de passe j'utilise la commande 'passwd $USER' (j'aurais pu préciser également mon mot de passe grâce à l'option '-p' de 'useradd' mais il aurait du être crypté)
+> passwd jolymartin
+
+Pour changer mon mot de passe, j'utilise encore la commande 'passwd'
+> passwd jolymartin
 > cat /etc/passwd | grep jolymartin
 La commande grep va afficher toutes les lignes de l'entrée (la sortie de cat /etc/passwd) contenant 'jolymartin'
 > cat /etc/shadow | grep jolymartin
+
+Question 6:
+
 > su jolymartin
 Cette commande me permet de me connecter à l'utilisateur jolymartin à travers le shell.
 Pour me placer dans mon répertoire de session, je fais la commande
@@ -70,3 +81,21 @@ ou
 > cd ~
 ou
 > cd $HOME
+
+Question 7 :
+$ touch fic1 file2 fic3fic fichierfile file3file && mkdir rep_1 && mv f* rep_1/
+
+La commande 'touch file1 file2 ..' créée les fichiers (vides), la commande 'mkdir nomDeDossier' créée le repertoire et la commande 'mv src dest/' bouge les fichiers src dans le repertoire dest.
+f* signifie "tous les fichiers commençant par f".
+&& signifie "si la commande est successful, alors".
+
+Question 8 :
+$ mkdir temps
+$ cd temps
+$ touch fic1 fic2 fichierVide monFichierVide
+$ echo "contenu" > monFichierNonVide
+$ echo "encore du contenu" > unNouveauFichier
+$ find . -size 0 -exec rm {} \;
+
+La commande ci dessus va chercher les fichiers qui remplissent les conditions : ici la taille doit être 0 comme le précise le paramètre -size. Et il va ensuite éxécuter la commande rm sur ces fichiers comme le précise le paramètre -exec
+
