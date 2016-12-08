@@ -110,4 +110,5 @@ ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kil
 Ensuite avec 'xargs' on va mettre les processus qu'on aura récupéré de la commande précédante grâce au pipe '|', en arrière plan, puis on va recommencer et rechercher les process de jolymartin pour enfin les envoyer à xargs -I {} kill {} qui va les killer. (équivalent de 'kill $PID')
 
 La commande à rentrer est
-alias del="ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kill {}"
+alias searchkill_jolymartin="ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kill {}"
+
