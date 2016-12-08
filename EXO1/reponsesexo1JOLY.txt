@@ -1,0 +1,32 @@
+Mon adresse IP est un identifiant unique sur le réseau qui permet de m'identifier de manière numérique.
+On a très souvent 2 adresses IP : l'adresse IP Publique (80.215.242.152) et l'adresse IP locale (192.168.43.66)
+
+L'adresse IP publique a été obtenue sur internet sur le site www.mon-ip.com
+L'adresse IP locale a été obtenue en utilisant la commande "ifconfig", en regardant sur l'interface correspondante (dans mon cas en0), la ligne contenant "inet".
+Chaque IP enfin est écrite sous 2 formes : IPV4 et IPV6. La plus utilisée est l'IPV4.
+Pour avoir nos deux adresses IP locales on tape "ifconfig en0 | grep inet" et si on veut seulement la IPV4 on tape "ifconfig en0 | grep inet | grep inet6 -v"
+
+Sortie de "ifconfig en0" :
+	en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+		ether xx:xx:xx:xx:xx:xx
+		inet6 fexx::6axx:6dxx:fexx:27xx%en0 prefixlen 64 scopeid 0x4 
+		inet 192.168.43.66 netmask 0xffffff00 broadcast 192.168.43.255
+		nd6 options=1<PERFORMNUD>
+		media: autoselect
+		status: active
+Sortie de "ifconfig en0 | grep inet | grep inet6 -v"
+		inet 192.168.43.66 netmask 0xffffff00 broadcast 192.168.43.255
+
+Pour avoir l'adresse ip du site ubuntu-fr.org j'ai plusieurs options et je vais choisir celle de pinger la machine hôte.
+
+$ ping ubuntu-fr.org      
+PING ubuntu-fr.org (86.65.39.13): 56 data bytes
+64 bytes from 86.65.39.13: icmp_seq=0 ttl=52 time=40.721 ms
+
+Cette dernière ligne indigne que les paquets ont bien été reçus par la machine qui se situe en 86.65.39.13. Nous avons donc l'adresse IP de la machine distante.
+
+
+Réponses :
+Mon ip publique : 80.215.242.152
+Mon ip locale : 192.168.43.66
+L'ip de ubuntu-fr.org : 86.65.39.13
