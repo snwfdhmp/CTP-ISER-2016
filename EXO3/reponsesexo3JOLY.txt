@@ -1,0 +1,45 @@
+$ ssh examtp@51.255.199.225
+> ls
+. . . . . . /* quelques fichiers */ ......
+> cd
+> echo $HOME
+/home/examtp
+> pwd
+/home/examtp
+// Nous remarquons ici que nous sommes bien placés, grâce à la commande cd seule (ou cd ~) qui nous emmène directement dans notre répertoire de session (contenu dans la variable d'environnement $HOME et également précisé dans le fichier /etc/passwd)
+> man ls
+> ls -lat
+	total 120
+	drwxr-xr-x 4 root   root    4096 Dec  4 20:33 ..
+	-rw-r--r-- 1 examtp examtp   655 Dec  4 20:33 .profile
+	-rw-r--r-- 1 examtp examtp  3771 Dec  4 20:33 .bashrc
+	-rw-r--r-- 1 examtp examtp   220 Dec  4 20:33 .bash_logout
+	drwx------ 2 examtp examtp  4096 Dec  8 08:53 .cache
+	-rw-rw-r-- 1 examtp examtp  4096 Dec  8 09:19 DEAZEVEDO_Adrien.txt
+	-rw-rw-r-- 1 examtp examtp   660 Dec  8 09:20 PERDRIEAU_Clement.txt
+	-rw------- 1 examtp examtp   681 Dec  8 09:20 .viminfo
+	drwxr-xr-x 3 examtp examtp  4096 Dec  8 09:20 .
+	-rw------- 1 examtp examtp  2736 Dec  8 09:24 .bash_history
+	-rw-rw-r-- 1 examtp examtp 81920 Dec  8 09:24 joly_martin.txt
+> ls -latr
+	total 120
+	-rw-rw-r-- 1 examtp examtp 81920 Dec  8 09:24 joly_martin.txt
+	-rw------- 1 examtp examtp  2736 Dec  8 09:24 .bash_history
+	drwxr-xr-x 3 examtp examtp  4096 Dec  8 09:20 .
+	-rw------- 1 examtp examtp   681 Dec  8 09:20 .viminfo
+	-rw-rw-r-- 1 examtp examtp   660 Dec  8 09:20 PERDRIEAU_Clement.txt
+	-rw-rw-r-- 1 examtp examtp  4096 Dec  8 09:19 DEAZEVEDO_Adrien.txt
+	drwx------ 2 examtp examtp  4096 Dec  8 08:53 .cache
+	-rw-r--r-- 1 examtp examtp   220 Dec  4 20:33 .bash_logout
+	-rw-r--r-- 1 examtp examtp  3771 Dec  4 20:33 .bashrc
+	-rw-r--r-- 1 examtp examtp   655 Dec  4 20:33 .profile
+	drwxr-xr-x 4 root   root    4096 Dec  4 20:33 ..
+> cat /etc/passwd
+/* contenu du fichier
+> tail -n 5 /etc/passwd
+dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin
+pollinate:x:111:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+examtp:x:1001:1001:examtp,0,000,000,0:/home/examtp:/bin/bash
+> 
