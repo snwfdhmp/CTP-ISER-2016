@@ -58,6 +58,12 @@ Question 3:
 //Ici on va utiliser la commande awk qui permet de faire des traitements sur les sorties et sur les fichiers.
 J'ai cherché sur internet cette commande, qui était déjà faite pour les 4 dernières lignes d'un fichier, du coup je l'ai adapté à mes besoins.
 
+Question 4
+
+ls /etc | grep ^[p,m]
+
+On filtre les sorties du 'ls' de '/etc' grâce à grep et on affiche seulement les lignes qui commencent par un "p" ou un "m"
+
 Question 5
 
 Pour créer mon compte, je fais
@@ -112,3 +118,18 @@ Ensuite avec 'xargs' on va mettre les processus qu'on aura récupéré de la com
 La commande à rentrer est
 alias searchkill_jolymartin="ps -ejHU jolymartin | xargs -I {} bg {} && ps -ejHU jolymartin | xargs -I {} kill {}"
 
+Question 10:
+rechercher() { find '$2' -perm -x -exec echo {}\; > $1 ; }
+
+La fonction rechercher() va chercher les fichiers dans le répertoire $2 (argument n°2 passé à la fonction) qui ont la permission -x (qui sont donc éxécutables) ensuite il va éxécuter un echo du path de ces fichiers puis rediriger la sortie dans $1 (choisi par l'user)
+
+Ensuite on créée un alias qui renvoie vers cette fonction
+
+alias searchexe_jolymartin=rechercher
+
+On peut définir la fonction ainsi que l'alias dans le .bashrc, pour qu'ils soient opérationnels dès le démarrage d'un nouveau shell (uniquement à l'ouverture de bash par contre).
+
+
+Pour se déconnecter, on exécute :
+$ history -c
+$ exit
