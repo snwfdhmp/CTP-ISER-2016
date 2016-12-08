@@ -52,3 +52,21 @@ Question 3:
 	pollinate:x:111:1::/var/cache/pollinate:/bin/false
 	ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
 	examtp:x:1001:1001:examtp,0,000,000,0:/home/examtp:/bin/bash
+// ICI tail va écrire les 5 premières lignes en partant de la fin grâce à l'option -n 5
+// tail -> inverse de head
+> cat /etc/passwd | awk '{a[++i%5]=$0} END {print a[++i%5],a[++i%5],a[++i%5],a[++i%5],a[++i%5]}' OFS='\n'
+//Ici on va utiliser la commande awk qui permet de faire des traitements sur les sorties et sur les fichiers.
+J'ai cherché sur internet cette commande, qui était déjà faite pour les 4 dernières lignes d'un fichier, du coup je l'ai adapté à mes besoins.
+
+Pour changer mon mot de passe, j'entre la commande 'passwd'
+> cat /etc/passwd | grep jolymartin
+La commande grep va afficher toutes les lignes de l'entrée (la sortie de cat /etc/passwd) contenant 'jolymartin'
+> cat /etc/shadow | grep jolymartin
+> su jolymartin
+Cette commande me permet de me connecter à l'utilisateur jolymartin à travers le shell.
+Pour me placer dans mon répertoire de session, je fais la commande
+> cd
+ou
+> cd ~
+ou
+> cd $HOME
