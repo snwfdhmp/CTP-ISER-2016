@@ -1,0 +1,20 @@
+Question 1:
+
+$ cd EXO2
+$ mkdir poubelle
+
+
+Question 2 :
+alias del="mv $1 ~/CTP/EXO2/poubelle"
+
+'mv' déplace le fichier, '$1' -> premier argument, '~/...' emplacement de ma poubelle
+
+Question 3 :
+
+alias list="export old_path=$(pwd) && cd ~/CTP/EXO2/poubelle && ls -d -1 $(pwd)/poubelle/* > ~/.listing && cat ~/.listing && cd $old_path"
+
+On sauvegarde l'emplacement initial dans la variable old_path puis on bouge vers la poubelle puis on prend le pwd et on fait une recherche avec un path absolu afin que ls nous renvoie également un path absolu.
+Ensuite on redirige le tout vers le fichier .listing et on l'affiche, puis on revient au répertoire initial.
+
+Question 4 :
+alias empty="rm $(cat ~/.listing)"

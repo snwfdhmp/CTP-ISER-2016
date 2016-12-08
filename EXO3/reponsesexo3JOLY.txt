@@ -58,6 +58,9 @@ Question 3:
 //Ici on va utiliser la commande awk qui permet de faire des traitements sur les sorties et sur les fichiers.
 J'ai cherché sur internet cette commande, qui était déjà faite pour les 4 dernières lignes d'un fichier, du coup je l'ai adapté à mes besoins.
 
+cat /etc/passwd | grep -e "x:[100-1200]" > tmp.txt && grep -e "^m" tmp.txt > tmp2.txt && grep -e "^s" tmp.txt >> tmp2.txt && rm tmp.txt && cat tmp2.txt
+
+
 Question 4
 
 ls /etc | grep ^[p,m]
