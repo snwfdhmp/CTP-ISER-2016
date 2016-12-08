@@ -59,3 +59,27 @@ $ cd ISER<tab>
 $ ls -la
 $ cat indice3
 www.poesie.webnet.fr
+$ cat indice4
+***
+***
+ ----->> indice = JDLF
+***
+***
+
+L'indice3 était un lien et dans le fichier indice4 se cachait un autre indice : JDLF
+
+Contenu de /home/pkubiak/ISER2016/codage :
+L <--> %
+a <--> /
+e <--> $
+i <--> +
+o <--> *
+u <--> <
+y <--> >
+m <--> 5
+n <--> 0
+l <--> &
+C <--> !
+F <--> -
+r <--> 9
+h <--> =

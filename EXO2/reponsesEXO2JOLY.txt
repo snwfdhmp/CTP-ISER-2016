@@ -18,3 +18,10 @@ Ensuite on redirige le tout vers le fichier .listing et on l'affiche, puis on re
 
 Question 4 :
 alias empty="rm $(cat ~/.listing)"
+
+'rm' supprime tous les arguments, $(function) renvoie le résultat de function et cat ~/.listing affiche le fichier .listing
+
+Quesiton 5:
+$ unalias del list empty
+
+unalias supprime tous les alias à partir des commandes sources (x si on a utilisé 'alias x=y')
